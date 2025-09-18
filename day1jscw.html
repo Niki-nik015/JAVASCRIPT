@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Online Store</title>
 </head>
 <body>
-    
+    <p id="earn"></p>
+    <p id="update"></p>
+    <script type="text/javascript">
+        var tshirt=400;
+        var cap=150;
+        var tshirt_sold=5;
+        var cap_sold=3;
+        var earning=tshirt*tshirt_sold+cap*cap_sold;
+        document.getElementById("earn").innerHTML="Total Earnings="+" "+earning;
+
+        var newtshirt=450;
+        var updatedearning=newtshirt*tshirt_sold+cap*cap_sold;
+        document.getElementById("update").innerHTML="Updated Earining="+" "+updatedearning;
+    </script>
 </body>
 </html>
