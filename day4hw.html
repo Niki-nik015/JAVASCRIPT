@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Game Result Generator</title>
+</head>
+<body>
+  <h2>Game Result Generator</h2>
+
+  <p id="mysteryLevel"></p>
+  <p id="userScoreNum"></p>
+  <p id="absDifference"></p>
+  <p id="sqrtScore"></p>
+  <p id="piValue"></p>
+  <p id="implicitMult"></p>
+  <p id="maxValue"></p>
+  <p id="minValue"></p>
+
+  <script>
+    function generateResult() {
+        let mystery = Math.floor(Math.random() * 50) + 1;
+        let userScore = Math.floor(Math.random() * 50) + 1;
+        let userScoreStr = String(userScore);
+        let difference = Math.abs(mystery - userScore);
+        let sqrtVal = Math.sqrt(userScore);
+        let pi = Math.PI;
+        let implicit = "20" * 5;
+        let maxVal = Math.max(10, 20, mystery);
+        let minVal = Math.min(10, 20, mystery);
+
+     
+        document.getElementById("mysteryLevel").innerHTML = `Mystery Level: <b>${mystery}</b>`;
+        document.getElementById("userScoreNum").innerHTML = `User Score (number): <b>${userScore}</b>`;
+        document.getElementById("absDifference").innerHTML = `Absolute Difference: <b>${difference}</b>`;
+        document.getElementById("sqrtScore").innerHTML = `Square Root of User Score: <b>${sqrtVal.toFixed(2)}</b>`;
+        document.getElementById("piValue").innerHTML = `Value of Pi: <b>${pi}</b>`;
+        document.getElementById("implicitMult").innerHTML = `Implicit Conversion ("20"*5): <b>${implicit}</b>`;
+        document.getElementById("maxValue").innerHTML = `Maximum (10, 20, Mystery): <b>${maxVal}</b>`;
+        document.getElementById("minValue").innerHTML = `Minimum (10, 20, Mystery): <b>${minVal}</b>`;
+    }
+    generateResult();
+  </script>
+</body>
+</html>
