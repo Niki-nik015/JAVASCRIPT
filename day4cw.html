@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+</head>
+<body>
+    <h2>Statistics Widget </h2>
+    <p id="random"></p>
+    <p id="score"></p>
+    <p id="difference"></p>
+    <p id="sqrt"></p>
+    <p id="pi"></p>
+    <p id="conversion"></p>
+    <script type="text/javascript">
+        let randomNum = Math.floor(Math.random() * 100) + 1;
+        let userScoreStr = "75";
+        let userScore = Number(userScoreStr);
+        let difference = randomNum - userScore;
+        let sqrtRounded = Math.round(Math.sqrt(userScore));
+        let piValue = Math.PI;
+        let implicitConversion = "50" * 2;
+         document.getElementById("random").innerHTML = "Random Number (1-100): <b>" + randomNum + "</b>";
+         document.getElementById("score").innerHTML = "User Score (string → number): <b>" + userScore + "</b>";
+         document.getElementById("difference").innerHTML = "Difference (Random - User Score): <b>" + difference + "</b>";
+          document.getElementById("sqrt").innerHTML = "Rounded Square User Score: <b>" + sqrtRounded + "</b>";
+          document.getElementById("pi").innerHTML = "π constant: <b>" + piValue + "</b>";
+          document.getElementById("conversion").innerHTML = 'Implicit Conversion ("50" * 2): <b>' + implicitConversion + "</b>";
+    </script>
+</body>
+</html>
