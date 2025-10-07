@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Format</title>
+</head>
+<body>
+  <script>
+    let jsonText = '{ "name":"Niki", "email":"niki@gmail.com", "message":"HYY GUYZZ"}';
+
+    const jsObject = () => {
+      try {
+        let user = JSON.parse(jsonText);
+        console.log("Message received from " + user.name);
+      } 
+      catch (error) {
+        console.error("Error parsing JSON:", error.message);
+      }
+    };
+
+    jsObject();
+  </script>
+</body>
+</html>
