@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <p id="id1"></p>
+    <script>
+        function filter(comment)
+        {          
+           let new_comment = comment.replace(/[0-9]+/g,"NUMBER");
+
+            let if_exist = /\d/.test(comment) ? "TRUE" : "FALSE";
+           return`DOES DIGITS EXIST IN THE COMMENT?(TRUE/FALSE): ${if_exist}<br><br> FILTERED COMMENT: ${new_comment}`;
+        }
+        let comment="My son is 12 years old. Our flat number is 45 and contact is 9876543210.";
+        let result=filter(comment);
+        document.getElementById("id1").innerHTML=result;
+    </script>
+</body>
+</html>
