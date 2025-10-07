@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Filtering</title>
+</head>
+<body>
+    <p id="id1"></p>
+    <script>
+        function filter(comment)
+        {
+           let cleaned_comment = comment.replace(/\b(bad|ugly|stupid)\b/gi,"***");
+          
+           let numbers = comment.match(/[0-9]+/g);
+           let number_count = numbers ? numbers.length:0;
+
+           let capital = comment.match(/[A-Z][a-zA-Z]*/g);
+           let capital_count = capital ? capital.length:0;
+
+           return`CLEANED COMMENT: ${cleaned_comment}<br><br> NO.OF NUMBERS MENTIONED IN COMMENT: ${number_count}<br><br>NO.OF WORDS STARTING WITH CAPITAL LETTERS; ${capital_count}`;
+        }
+        let comment="I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.";
+        let result=filter(comment);
+        document.getElementById("id1").innerHTML=result;
+    </script>
+</body>
+</html>
