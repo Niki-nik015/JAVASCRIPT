@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User System</title>
+</head>
+<body>
+
+<h2>User System</h2>
+<div id="output"></div>
+<button onclick="updateEmail()">Try Updating Email</button>
+
+<script>
+class User {
+  constructor(name, age, email) {
+    this.name = name;
+    this.age = age;
+    this._email = email;
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getAge() {
+    return this.age;
+  }
+
+  getEmail() {
+    return this._email;
+  }
+
+  setEmail(newEmail) {
+    if (typeof newEmail === "string" && newEmail.includes("@")) {
+      this._email = newEmail;
+      this.message = `✅ Email updated to: ${this._email}`;
+    } else {
+      this.message = "❌ Invalid email. Must contain '@'.";
+    }
+  }
+
+  getDetails() {
+    return `
+      Name: ${this.getName()}<br>
+      Age: ${this.getAge()}<br>
+      Email: ${this.getEmail()}
+    `;
+  }
+}
+
+const user1 = new User("Niki", 25, "niki@example.com");
+
+function updateEmail() {
+  const output = document.getElementById("output");
+  user1.setEmail("nikigmail.com");
+  let result = user1.message + "<br>";
+  user1.setEmail("niki123@gmail.com");
+  result += user1.message + "<br><br>";
+  result += "Final User Details:<br>" + user1.getDetails();
+  output.innerHTML = result;
+}
+</script>
+
+</body>
+</html>
