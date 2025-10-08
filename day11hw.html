@@ -34,7 +34,7 @@ class User {
   setEmail(newEmail) {
     if (typeof newEmail === "string" && newEmail.includes("@")) {
       this._email = newEmail;
-      this.message = `✅ Email updated to: ${this._email}`;
+      this.message = `Email updated to: ${this._email}`;
     } else {
       this.message = "❌ Invalid email. Must contain '@'.";
     }
