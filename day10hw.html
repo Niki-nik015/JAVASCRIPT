@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let input = '{"user":"Admin","feedback":"Thank You for the help"}';
+
+        try
+        {
+            const feedback = JSON.parse(input);
+            
+            let check_feedback = (fb)=>{
+                                 let match_res = /\bThank\b/gi.test(fb.feedback)?"Positive feedback received":"Feedback noted";    
+                                 return match_res;
+                                }
+            document.getElementById("display").innerHTML=check_feedback(feedback);
+        }
+        catch(error)
+        {
+            document.getElementById("display").innerHTML = "ERROR OCCURED!";
+            console.error(error.name);
+        }
+    </script>
+</body>
+</html>
