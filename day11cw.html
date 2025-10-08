@@ -26,16 +26,16 @@
     try {
       if (typeof newPrice !== "number" || newPrice <= 0) throw "Invalid price!";
       this.price = newPrice;
-      console.log(`✅ Price updated to ₹${this.price}`);
+      console.log(` Price updated to ₹${this.price}`);
     } catch (err) {
       console.log("❌ " + err);
     }
   }
 
   showDetails() {
-    console.log(`📘 Title: ${this.title}`);
-    console.log(`✍️ Author: ${this.author}`);
-    console.log(`💰 Price: ₹${this.price}`);
+    console.log(` Title: ${this.title}`);
+    console.log(` Author: ${this.author}`);
+    console.log(` Price: ₹${this.price}`);
   }
 }
 
