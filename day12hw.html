@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Page</title>
+  <style>
+   
+    #message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+
+  <form id="form">
+    <input type="text" id="name" placeholder="Your name" required><br><br>
+    <textarea id="feedback" placeholder="Your feedback" rows="4" cols="30" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="message"></p>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById("form");
+    const nameInput = document.getElementById("name");
+    const feedbackInput = document.getElementById("feedback");
+    const result = document.getElementById("result");
+    const message = document.getElementById("message");
+
+    form.onsubmit = e => {
+      e.preventDefault(); 
+
+      result.innerHTML = `
+        <p><strong>Name:</strong> ${nameInput.value}</p>
+        <p id="feedbackText"><strong>Feedback:</strong> ${feedbackInput.value}</p>
+      `;
+
+      message.textContent = "Thanks for your feedback!";
+
+      setTimeout(() => {
+        message.textContent = "";
+      }, 5000);
+    };
+
+    result.addEventListener("mouseover", e => {
+      if (e.target.id === "feedbackText") e.target.style.color = "blue";
+    });
+
+    result.addEventListener("mouseout", e => {
+      if (e.target.id === "feedbackText") e.target.style.color = "black";
+    });
+  </script>
+</body>
+</html>
