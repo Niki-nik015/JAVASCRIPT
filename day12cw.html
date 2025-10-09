@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Display</title>
+  <style>
+    p {
+      color: blue;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Text Display Example</h2>
+
+  <form id="textForm">
+    <input type="text" id="userText" placeholder="Enter text here" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="displayText"></p>
+
+  <script>
+    const form = document.getElementById("textForm");
+    const input = document.getElementById("userText");
+    const display = document.getElementById("displayText");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page reload
+      display.textContent = input.value;
+      display.style.color = "blue";
+    });
+
+    display.addEventListener("mouseover", function() {
+      display.style.color = "green";
+    });
+
+    display.addEventListener("mouseout", function() {
+      display.style.color = "blue";
+    });
+  </script>
+</body>
+</html>
